@@ -62,7 +62,7 @@ if ModSettingGet("noita-mp.toggle_debug") then
         y             = y
     }
 
-    table.setNoitaMpDefaultMetaMethods(data, "kv")
+    -- table.setNoitaMpDefaultMetaMethods(data, "kv")
     local i = 0
 
     for name, value in pairs(data) do
