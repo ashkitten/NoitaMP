@@ -39,14 +39,14 @@ if not ModSettingGet then
             return { "trace, debug, info, warn", "TRACE" }
         end
         if id == "noita-mp.name" then
-            local name = minaUtils.getLocalMinaName()
+            local name = minaUtils:getLocalMinaName()
             if utils.IsEmpty(name) then
                 name = "initializeUnitTests"
             end
             return name
         end
         if id == "noita-mp.guid" then
-            local guid = minaUtils.getLocalMinaGuid()
+            local guid = minaUtils:getLocalMinaGuid()
             if Utils.IsEmpty(guid) then
                 guid = guidUtils:generateNewGuid()
             end
@@ -63,7 +63,7 @@ if not ModSettingGet then
             return false
         end
         if id == "noita-mp.guid" then
-            return minaUtils.getLocalMinaGuid()
+            return minaUtils:getLocalMinaGuid()
         end
 
         error(("ModSettingGetNextValue '%s' is not mocked! Add it!"):format(id), 2)

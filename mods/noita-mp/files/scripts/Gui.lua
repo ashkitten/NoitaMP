@@ -302,7 +302,7 @@ function Gui:drawPlayMenu()
     local isCollapsed
     isCollapsed, self.showPlayMenu = self.imGui.Begin(self.playLabel, self.showPlayMenu, windowFlags)
     if isCollapsed then
-        if self.utils:isEmpty(self.minaUtils.getLocalMinaName()) then
+        if self.utils:isEmpty(self.minaUtils:getLocalMinaName()) then
             self.imGui.Text(("Please set your name in the settings first! Simply press '%s'!"):format(self.shortcuts.settings))
             self.imGui.End()
             self.customProfiler:stop("Gui.drawPlayMenu", cpc)
@@ -409,7 +409,7 @@ function Gui:drawSettings()
         self.imGui.Text("Mandatory:")
 
         -- Player name
-        local isPlayerNameChanged, playerName = self.imGui.InputTextWithHint("Nickname", "Type in your Nickname!", self.minaUtils.getLocalMinaName())
+        local isPlayerNameChanged, playerName = self.imGui.InputTextWithHint("Nickname", "Type in your Nickname!", self.minaUtils:getLocalMinaName())
         if isPlayerNameChanged then
             self.minaUtils:setLocalMinaName(playerName)
         end
